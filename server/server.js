@@ -1,4 +1,5 @@
 const express = require('express');
+const { assertValidExecutionArguments } = require('graphql/execution/execute');
 //const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 
@@ -13,6 +14,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
+app.post('/home',async (req, res) => {
+ let result = await axios.get("http://whateverapiurlis${process.env.MarvelToken}?${req.body.superHeroName}")
+
+ res.json(result)
+} )
 
 
 // const startServer = async () => {
