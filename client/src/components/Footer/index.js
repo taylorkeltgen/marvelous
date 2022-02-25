@@ -12,7 +12,7 @@ export default function Footer() {
             Data provided by Marvel. &copy;{new Date().getFullYear()} Marvel
           </p>
           <p>
-            Created by Kevin Aboy, Bryan Acosta, Sabrina <br /> Elkins, Taylor
+            Created by Kevin Aboy, Bryan Acosta,<br />  Sabrina Elkins, Taylor
             Keltgen, Zak Krutikov
           </p>
         </div>
