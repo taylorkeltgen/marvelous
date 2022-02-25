@@ -11,7 +11,6 @@ const resolvers = {
 
         return userData;
       }
-
       throw new AuthenticationError('Not logged in');
     },
     // Find All Users
@@ -29,12 +28,11 @@ const resolvers = {
     comment: async (parent, { _id }) => {
       return Comment.findOne({ _id });
     },
-    heros: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Comment.find(params).sort({ createdAt: -1 });
+    heros: async () => {
+      return Hero.find();
     },
     hero: async (parent, { _id }) => {
-      return Comment.findOne({ _id });
+      return Hero.findOne({ _id });
     },
   },
 
@@ -61,41 +59,35 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addThought: async (parent, args, context) => {
+
+    // NOT Completed ////////////////////
+    addComment: async (parent, args, context) => {
       if (context.user) {
-        const thought = await Thought.create({ ...args, username: context.user.username });
+        const comment = await Comment.create({ ...args, username: context.user.username });
 
-        await User.findByIdAndUpdate({ _id: context.user._id }, { $push: { thoughts: thought._id } }, { new: true });
+        await User.findByIdAndUpdate({ _id: context.user._id }, { $push: { comments: comment._id } }, { new: true });
 
-        return thought;
+        return comment;
       }
-
       throw new AuthenticationError('You need to be logged in!');
     },
-    addReaction: async (parent, { thoughtId, reactionBody }, context) => {
-      if (context.user) {
-        const updatedThought = await Thought.findOneAndUpdate(
-          { _id: thoughtId },
-          { $push: { reactions: { reactionBody, username: context.user.username } } },
-          { new: true, runValidators: true }
-        );
+    // addComment: async (parent, { commentId, commentText }, context) => {
+    //   if (context.user) {
+    //     const updatedThought = await Thought.findOneAndUpdate(
+    //       { _id: thoughtId },
+    //       { $push: { reactions: { reactionBody, username: context.user.username } } },
+    //       { new: true, runValidators: true }
+    //     );
 
-        return updatedThought;
-      }
+    //     return updatedThought;
+    //   }
 
-      throw new AuthenticationError('You need to be logged in!');
-    },
-    addFriend: async (parent, { friendId }, context) => {
-      if (context.user) {
-        const updatedUser = await User.findOneAndUpdate({ _id: context.user._id }, { $addToSet: { friends: friendId } }, { new: true }).populate(
-          'friends'
-        );
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
 
-        return updatedUser;
-      }
-
-      throw new AuthenticationError('You need to be logged in!');
-    },
+    // NEED Adding ////////////////////
+    editComment: async (parent, args, context) => {},
+    deleteComment: async (parent, args, context) => {},
   },
 };
 
