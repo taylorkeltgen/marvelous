@@ -1,36 +1,26 @@
 const { Schema, model } = require('mongoose');
-// const commentSchema = require('./Comment');  
+const commentSchema = require('./Comment');
 
 const HeroSchema = new Schema(
   {
-name: {
-    type: String,
-},
-
-bio: {
-    type: String,
-},
-
-stats: {
-    type: String,
-
-},
-
-trivia: {
-    type: String,
-},
-
-image: {
-    type: String,
-},
-
-comments:[commentSchema]
-
-},
+    name: {
+      type: String,
+    },
+    bio: {
+      type: String,
+    },
+    trivia: {
+      type: String,
+    },
+    image: {
+      type: String,
+    },
+    comments: [commentSchema],
+  },
   {
     toJSON: {
-      getters: true
-    }
+      getters: true,
+    },
   }
 );
 
