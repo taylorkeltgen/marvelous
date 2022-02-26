@@ -86,8 +86,8 @@ const resolvers = {
     // },
 
     // NEED Adding ////////////////////
-    editComment: async (parent, args, context) => {},
-    deleteComment: async (parent, args, context) => {},
+    editComment: async (parent, args, context) => { },
+    deleteComment: async (parent, args, context) => { },
   },
 };
 
