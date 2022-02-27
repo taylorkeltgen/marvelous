@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 const commentSchema = require('./Comment');
-const { CommentSchema } = require(__dirname + '/Comment.js').schema;
+// const { CommentSchema } = require(__dirname + '/Comment.js').schema;
 const HeroSchema = new Schema(
   {
     name: {

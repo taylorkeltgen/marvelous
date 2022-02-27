@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/marvelous',
   {
-    useNewUrlParser: true, 
+    useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
+    // useCreateIndex: true,
+    // useFindAndModify: false
   }
 );
 

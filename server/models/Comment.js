@@ -36,6 +36,6 @@ CommentSchema.virtual('likedCount').get(function () {
   return this.likeCount.length;
 });
 
-const Comment = model('Comment', CommentSchema);
+// const Comment = model('Comment', CommentSchema);
 
-module.exports = Comment;
+module.exports = CommentSchema;
