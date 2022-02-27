@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Footer from "./components/Footer";
+import Search from "./components/Search";
 import FeaturedHero from "./components/FeaturedHero";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { setContext } from "@apollo/client/link/context";
@@ -34,8 +35,10 @@ const client = new ApolloClient({
 function App() {
 	return (
 		<ApolloProvider client={client}>
+			
 			<Router>
 				<FeaturedHero />
+				<Search />
 				<Footer />
 			</Router>
 		</ApolloProvider>
