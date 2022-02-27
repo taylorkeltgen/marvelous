@@ -1,29 +1,54 @@
-import React, { Component }  from 'react';
-import ReactDOM from 'react-dom'
+import React, { useState }  from 'react';
+import ReactDOM from 'react-dom';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, Container, Row, Col, FormControl, InputGroup } from 'react-bootstrap';
 import axios from 'axios';
 require('dotenv').config();
 
-const md5 = require('md5');
-const privateKey = '7c102ae9dfa5e000b24a379d896608a72aab9b71'
-const publicKey = '22a7456573deb77de2473e3e16a78271';
-const ts = new Date().getTime();
-const stringToHash = ts + privateKey + publicKey;
-const token = md5(stringToHash);
-const BASE_URL = 'https://gateway.marvel.com:443/v1/public/characters?name=thor';
-const testUrl = BASE_URL + '&ts=' + ts + '&apikey=' + publicKey + '&hash=' + token;
-
-
-axios.get(`${testUrl}`)
-.then((response) => {
-    console.log(response);
-})
 
 const Search = () => {
+    const [character, setCharacter] = useState([])
+    const [search, setSearch] = useState()
+
+    const clicked = () => {
+        // declaring variables needed for an API call as per Marvel documentation
+        const md5 = require('md5');
+        const privateKey = '7c102ae9dfa5e000b24a379d896608a72aab9b71'
+        const publicKey = '22a7456573deb77de2473e3e16a78271';
+        const ts = new Date().getTime();
+        const stringToHash = ts + privateKey + publicKey;
+        const token = md5(stringToHash);
+        const BASE_URL = 'https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=' + search;
+        const testUrl = BASE_URL + '&ts=' + ts + '&apikey=' + publicKey + '&hash=' + token;
+
+        // making API call using axios
+        axios.get(`${testUrl}`)
+        .then((response) => {
+            console.log(response.data.data);
+            setCharacter(response.data.data.results);
+        })
+    }
+    // collecting user inputed search term
+    const handleInputChange = (event) => {
+        setSearch(event.target.value)
+    }
 
     return (
-        <div>
-
-        </div>
+             <Container fluid>
+  <Row>
+    <Col md={6}>
+    <input type="text" value={search} onChange={handleInputChange}></input>
+    </Col>
+    <Col>
+    <Button type="button" onClick={clicked}>Search</Button>
+    </Col>
+  </Row> 
+            <ul>
+            {character && character.map((hero) => 
+                <li>{hero.name}</li>
+            )}
+            </ul>
+        </Container>
     )
 }
 
