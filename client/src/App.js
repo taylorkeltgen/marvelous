@@ -6,12 +6,11 @@ import { setContext } from '@apollo/client/link/context';
 
 // COMPONENT IMPORTS //
 import Footer from './components/Footer';
-import Search from './components/Search';
-import FeaturedHero from './components/FeaturedHero';
 import HeroSearch from './pages/HeroSearch';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Spotlight from './pages/Spotlight';
 
 /// BACK-END LINK TO FRONT-END ///
 const httpLink = createHttpLink({
@@ -43,6 +42,7 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/search" component={HeroSearch} />
+            <Route exact path="/spotlight" component={Spotlight} />
           </Switch>
           <Footer />
         </>

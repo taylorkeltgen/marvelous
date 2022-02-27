@@ -1,16 +1,16 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { QUERY_HEROES } from '../utils/queries';
+// import { useQuery } from '@apollo/client';
+// import { QUERY_HEROES } from '../utils/queries';
 
-const FeaturedHero = ({ heroData }) => {
+const HeroSpotlight = ({ heroData }) => {
   // use useQuery hook to make query request
-  const { loading, data } = useQuery(QUERY_HEROES);
-  const heroes = data?.heroes || [];
-  console.log(heroes);
+  // const { loading, data } = useQuery(QUERY_HEROES);
+  // const heroes = data?.heroes || [];
+  // console.log(heroes);
 
   return (
     <div>
-      <div key={heroData.id} className="card">
+      {/* <div key={heroData.id} className="card">
         <div className="hero-card-container">
           <div className="card-body">
             <h3>Featured Hero</h3>
@@ -28,9 +28,9 @@ const FeaturedHero = ({ heroData }) => {
             <p>{heroData.trivia}</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
 
-export default FeaturedHero;
+export default HeroSpotlight;

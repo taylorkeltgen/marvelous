@@ -1,7 +1,12 @@
 import React from 'react';
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <>
+      <h1>3D Man</h1>
+      <h2>Featured Hero</h2>
+    </>
+  );
 };
 
 export default Home;
