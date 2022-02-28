@@ -1,11 +1,12 @@
 const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 const CommentSchema = new Schema(
   {
-    featuredHero: {
-      type: Schema.Types.ObjectId,
-      ref: 'Hero',
-    },
+    // featuredHero: {
+    //   type: String,
+    //   required: true,
+    // },
     commentText: {
       type: String,
       required: 'You need to leave a comment!',
@@ -21,12 +22,10 @@ const CommentSchema = new Schema(
       type: String,
       required: true,
     },
-    likeCount: {
-      type: Number,
-    },
   },
   {
     toJSON: {
+      virtuals: true,
       getters: true,
     },
   }
@@ -35,7 +34,5 @@ const CommentSchema = new Schema(
 CommentSchema.virtual('likedCount').get(function () {
   return this.likeCount.length;
 });
-
-// const Comment = model('Comment', CommentSchema);
 
 module.exports = CommentSchema;

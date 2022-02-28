@@ -1,101 +1,189 @@
-import { useState } from 'react';
+// import { useState } from 'react';
  
-export default function Form() {
+// export default function Form() {
  
-  // States for registration
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+//   // States for registration
+//   const [name, setName] = useState('');
+//   const [email, setEmail] = useState('');
+//   const [password, setPassword] = useState('');
  
-  // States for checking the errors
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
+//   // States for checking the errors
+//   const [submitted, setSubmitted] = useState(false);
+//   const [error, setError] = useState(false);
  
-  // Handling the name change
-  const handleName = (e) => {
-    setName(e.target.value);
-    setSubmitted(false);
+//   // Handling the name change
+//   const handleName = (e) => {
+//     setName(e.target.value);
+//     setSubmitted(false);
+//   };
+ 
+//   // Handling the email change
+//   const handleEmail = (e) => {
+//     setEmail(e.target.value);
+//     setSubmitted(false);
+//   };
+ 
+//   // Handling the password change
+//   const handlePassword = (e) => {
+//     setPassword(e.target.value);
+//     setSubmitted(false);
+//   };
+ 
+//   // Handling the form submission
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     if (name === '' || email === '' || password === '') {
+//       setError(true);
+//     } else {
+//       setSubmitted(true);
+//       setError(false);
+//     }
+//   };
+ 
+//   // Showing success message
+//   const successMessage = () => {
+//     return (
+//       <div
+//         className="success"
+//         style={{
+//           display: submitted ? '' : 'none',
+//         }}>
+//         <h1>User {name} successfully registered!!</h1>
+//       </div>
+//     );
+//   };
+ 
+//   // Showing error message if error is true
+//   const errorMessage = () => {
+//     return (
+//       <div
+//         className="error"
+//         style={{
+//           display: error ? '' : 'none',
+//         }}>
+//         <h1>Please enter all the fields</h1>
+//       </div>
+//     );
+//   };
+ 
+//   return (
+//     <div className="form">
+//       <div>
+//         <h1>User Registration</h1>
+//       </div>
+ 
+//       {/* Calling to the methods */}
+//       <div className="messages">
+//         {errorMessage()}
+//         {successMessage()}
+//       </div>
+ 
+//       <form>
+//         {/* Labels and inputs for form data */}
+//         <label className="label">Name</label>
+//         <input onChange={handleName} className="input"
+//           value={name} type="text" />
+ 
+//         <label className="label">Email</label>
+//         <input onChange={handleEmail} className="input"
+//           value={email} type="email" />
+ 
+//         <label className="label">Password</label>
+//         <input onChange={handlePassword} className="input"
+//           value={password} type="password" />
+ 
+//         <button onClick={handleSubmit} className="btn" type="submit">
+//           Submit
+//         </button>
+//       </form>
+//     </div>
+//   );
+// }
+
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
+
+import Auth from '../utils/auth';
+
+const Signup = () => {
+  const [formState, setFormState] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
+  const [addUser, { error }] = useMutation(ADD_USER);
+
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
- 
-  // Handling the email change
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-    setSubmitted(false);
-  };
- 
-  // Handling the password change
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-    setSubmitted(false);
-  };
- 
-  // Handling the form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (name === '' || email === '' || password === '') {
-      setError(true);
-    } else {
-      setSubmitted(true);
-      setError(false);
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
     }
   };
- 
-  // Showing success message
-  const successMessage = () => {
-    return (
-      <div
-        className="success"
-        style={{
-          display: submitted ? '' : 'none',
-        }}>
-        <h1>User {name} successfully registered!!</h1>
-      </div>
-    );
-  };
- 
-  // Showing error message if error is true
-  const errorMessage = () => {
-    return (
-      <div
-        className="error"
-        style={{
-          display: error ? '' : 'none',
-        }}>
-        <h1>Please enter all the fields</h1>
-      </div>
-    );
-  };
- 
+
   return (
-    <div className="form">
-      <div>
-        <h1>User Registration</h1>
+    <main className="flex-row justify-center mb-4">
+      <div className="col-12 col-md-6">
+        <div className="card">
+          <h4 className="card-header">Sign Up</h4>
+          <div className="card-body">
+            <form onSubmit={handleFormSubmit}>
+              <input
+                className="form-input"
+                placeholder="Your username"
+                name="username"
+                type="username"
+                id="username"
+                value={formState.username}
+                onChange={handleChange}
+              />
+              <input
+                className="form-input"
+                placeholder="Your email"
+                name="email"
+                type="email"
+                id="email"
+                value={formState.email}
+                onChange={handleChange}
+              />
+              <input
+                className="form-input"
+                placeholder="******"
+                name="password"
+                type="password"
+                id="password"
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <button className="btn d-block w-100" type="submit">
+                Submit
+              </button>
+            </form>
+
+            {error && <div>Signup failed</div>}
+          </div>
+        </div>
       </div>
- 
-      {/* Calling to the methods */}
-      <div className="messages">
-        {errorMessage()}
-        {successMessage()}
-      </div>
- 
-      <form>
-        {/* Labels and inputs for form data */}
-        <label className="label">Name</label>
-        <input onChange={handleName} className="input"
-          value={name} type="text" />
- 
-        <label className="label">Email</label>
-        <input onChange={handleEmail} className="input"
-          value={email} type="email" />
- 
-        <label className="label">Password</label>
-        <input onChange={handlePassword} className="input"
-          value={password} type="password" />
- 
-        <button onClick={handleSubmit} className="btn" type="submit">
-          Submit
-        </button>
-      </form>
-    </div>
+    </main>
   );
-}
+};
+
+export default Signup;

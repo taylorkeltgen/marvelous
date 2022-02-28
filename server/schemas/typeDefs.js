@@ -7,22 +7,21 @@ const typeDefs = gql`
     email: String
   }
 
+  type Hero {
+    _id: ID
+    name: String
+    bio: String
+    trivia: String
+    image: String
+    comments: [Comment]
+  }
+
   type Comment {
     _id: ID
-    featuredHero: ID
     commentText: String
     createdAt: String
     username: String
     likeCount: Int
-  }
-
-  type Hero {
-    _id: ID
-    bio: String
-    stats: String
-    trivia: String
-    image: String
-    comments: [Comment]
   }
 
   type Auth {
@@ -34,16 +33,17 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
-    comments(username: String): [Comment]
-    comment(_id: ID!): Comment
-    heros: [Hero]
+    heroes: [Hero]
     hero(_id: ID!): Hero
+    comments: [Comment]
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addComment(commentText: String!): Comment
+    addHero(name: String!, bio: String!, trivia: String!, image: String!): Hero
+    addComment(featuredHeroId: ID!, commentText: String!): Hero
+    deleteComment(heroId: ID!, commentId: ID!): Hero
   }
 `;
 
