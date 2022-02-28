@@ -8,7 +8,7 @@ function TempNav() {
       <Navbar.Brand>
         {' '}
         <Link data-testid="about" to="/" className="nav-link">
-          <h1 className="page-title">Marelous</h1>
+          <h1 className="page-title">Marvelous</h1>
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
