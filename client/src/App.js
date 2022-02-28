@@ -9,13 +9,14 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Spotlight from './pages/Spotlight';
+import TempNav from './components/TempNav';
 
 /// App Setup ///
 function App() {
   return (
     <Router>
       <>
-        {/* NavBar location */}
+        <TempNav />
 
         <Switch>
           <Route exact path="/" component={Home} />
