@@ -16,6 +16,7 @@ function App() {
     <Router>
       <>
         {/* NavBar location */}
+
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />

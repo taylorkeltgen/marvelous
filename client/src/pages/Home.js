@@ -1,10 +1,10 @@
 import React from 'react';
+import FeaturedHero from '../components/FeaturedHero/FeaturedHero';
 
 const Home = () => {
   return (
     <>
-      <h1>3D Man</h1>
-      <h2>Featured Hero</h2>
+      <FeaturedHero />
     </>
   );
 };
