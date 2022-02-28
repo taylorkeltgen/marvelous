@@ -3,7 +3,7 @@ import "./index.css";
 import github from "../../assets/github-11-32.png";
 import marvel from "../../assets/marvel-logo.png";
 
-export default function Footer() {
+function Footer(props) {
   return (
     <div className="container-fluid">
       <footer className="row p-4">
@@ -33,3 +33,4 @@ export default function Footer() {
     </div>
   );
 }
+export default Footer;
