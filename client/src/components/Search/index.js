@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 import {
   Button,
   Container,
@@ -63,15 +64,17 @@ const Search = () => {
         <CardGroup>
           {character &&
             character.map((hero) => (
-              <Card style={{ width: "18rem" }}>
-                <Card.Img
-                  variant="top"
-                  src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
-                />
-                <Card.Body>
-                  <Card.Title>{hero.name}</Card.Title>
-                </Card.Body>
-              </Card>
+              <Row xs={2}>
+                <Card style={{ width: "18rem" }}>
+                  <Card.Img
+                    variant="top"
+                    src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
+                  />
+                  <Card.Body>
+                    <Card.Title>{hero.name}</Card.Title>
+                  </Card.Body>
+                </Card>
+              </Row>
             ))}
         </CardGroup>
       </Container>
