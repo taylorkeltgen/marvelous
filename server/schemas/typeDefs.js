@@ -9,6 +9,7 @@ const typeDefs = gql`
 
   type Hero {
     _id: ID
+    index: Int
     name: String
     bio: String
     trivia: String
@@ -34,16 +35,16 @@ const typeDefs = gql`
     users: [User]
     user(username: String!): User
     heroes: [Hero]
-    hero(_id: ID!): Hero
+    hero(index: Int!): Hero
     comments: [Comment]
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addHero(name: String!, bio: String!, trivia: String!, image: String!): Hero
-    addComment(featuredHeroId: ID!, commentText: String!): Hero
-    deleteComment(heroId: ID!, commentId: ID!): Hero
+    addHero(index: Int!, name: String!, bio: String!, trivia: String!, image: String!): Hero
+    addComment(index: Int!, commentText: String!): Hero
+    removeHero(id: ID!): Hero
   }
 `;
 

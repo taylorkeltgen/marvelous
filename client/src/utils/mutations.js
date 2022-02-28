@@ -54,9 +54,9 @@ export const ADD_COMMENT = gql`
   }
 `;
 
-export const REMOVE_COMMENT = gql`
-  mutation removeComment($id: ID!) {
-    removeComment(id: $id) {
+export const REMOVE_HERO = gql`
+  mutation removeHero($id: ID!) {
+    removeHero(id: $id) {
       _id
       name
       bio

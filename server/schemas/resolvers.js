@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Comment, Hero } = require('../models');
+const { User, Hero } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -24,8 +24,8 @@ const resolvers = {
     heroes: async () => {
       return Hero.find();
     },
-    hero: async (parent, { _id }) => {
-      return Hero.findOne({ _id });
+    hero: async (parent, { index }) => {
+      return Hero.findOne({ index });
     },
   },
 
@@ -56,10 +56,10 @@ const resolvers = {
       return hero;
     },
 
-    addComment: async (parent, { featuredHeroId, commentText }, context) => {
+    addComment: async (parent, { heroIndex, commentText }, context) => {
       if (context.user) {
         const comment = await Hero.findOneAndUpdate(
-          { _id: featuredHeroId },
+          { heroIndex },
           { $push: { comments: { commentText, username: context.user.username } } },
           { new: true }
         );
@@ -67,10 +67,10 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    deleteComment: async (parent, { heroId, commentId }, context) => {
+    removeHero: async (parent, { heroIndex }, context) => {
       if (context.user) {
-        const comment = await Hero.findOneAndUpdate({ where: { _id: { _eq: heroId._id } } }, { $pull: { comments: commentId } }, { new: true });
-        return comment;
+        const hero = await Hero.deleteOne({ where: { _id: { _eq: heroIndex } } }, { new: true });
+        return hero;
       }
       throw new AuthenticationError('You need to be logged in!');
     },

@@ -24,6 +24,7 @@ export const QUERY_HEROES = gql`
   query heroes {
     heroes {
       _id
+      index
       name
       bio
       trivia
@@ -40,8 +41,10 @@ export const QUERY_HEROES = gql`
 `;
 
 export const QUERY_HERO = gql`
-  query hero($id: ID!) {
-    hero(_id: $id) {
+  query hero($index: Int!) {
+    hero(index: $index) {
+      _id
+      index
       name
       bio
       trivia

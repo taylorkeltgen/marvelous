@@ -2,6 +2,10 @@ const { Schema, model } = require('mongoose');
 const commentSchema = require('./Comment');
 const HeroSchema = new Schema(
   {
+    index: {
+      type: Number,
+      required: true,
+    },
     name: {
       type: String,
     },
