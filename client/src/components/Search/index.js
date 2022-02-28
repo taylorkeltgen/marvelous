@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button, Container, Row, Col, Card, CardGroup } from "react-bootstrap";
+import {
+  Button,
+  Container,
+  Row,
+  Col,
+  Card,
+  CardGroup,
+  Form,
+} from "react-bootstrap";
 import axios from "axios";
 require("dotenv").config();
 
@@ -35,22 +43,22 @@ const Search = () => {
 
   return (
     <Container fluid>
-      <Container>
-        <Row>
-          <Col md={6}>
+      <Form>
+        <Row className="align-items-center">
+          <Col sm={2} className="my-1">
             <input
               type="text"
               value={search}
               onChange={handleInputChange}
             ></input>
           </Col>
-          <Col>
+          <Col sm={3} className="my-1">
             <Button type="button" onClick={clicked}>
               Search
             </Button>
           </Col>
         </Row>
-      </Container>
+      </Form>
       <Container>
         <CardGroup>
           {character &&
