@@ -13,7 +13,11 @@ const Home = () => {
 			>
 				<Col>
 					<h1>Welcome to Marvelous</h1>
-					<p>for comic book lovers</p>
+					<p>comic book lovers, movie fans, and newcomers!</p>
+					<p>Each week we introduce a new character.</p>
+					<p>Want more selections?</p>
+					<p>Search through the entire Marvel API database 
+						to learn about your favorite comic book superheros and villians.</p>
 					<Link to="/spotlight" style={{ textDecoration: "none" }}>
 						<Button variant="secondary">View featured hero</Button>{" "}
 					</Link>
