@@ -20,8 +20,8 @@ const Search = () => {
   const clicked = () => {
     // declaring variables needed for an API call as per Marvel documentation
     const md5 = require("md5");
-    const privateKey = "7c102ae9dfa5e000b24a379d896608a72aab9b71";
-    const publicKey = "22a7456573deb77de2473e3e16a78271";
+    const privateKey = "8b234d8fc59f4e05105f1acaed285c722fe7fb14";
+    const publicKey = "46789535638cb3c3e0e68269ee2d6844";
     const ts = new Date().getTime();
     const stringToHash = ts + privateKey + publicKey;
     const token = md5(stringToHash);
