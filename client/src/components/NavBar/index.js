@@ -1,24 +1,23 @@
-// import React from 'react';
-// import Navbar from 'react-bootstrap/Navbar';
-// import { Link } from 'react-router-dom';
+import React from 'react';
+import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 
-// ReactDOM.render(
-//   <Main/>,
-//   document.getElementById("root")
-// );
+ReactDOM.render(
+  <Main/>,
+  document.getElementById("root")
+);
 
-// <Navbar bg="rbg(255,0,0)" variant="dark">
-//     <Container>
-//     <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-//     <Nav className="me-auto">
-//       <Nav.Link href="#login">Login</Nav.Link>
-//       <Nav.Link href="#spotlight>Spotlight</Nav.Link>
-//       <Nav.Link href="#search">Search</Nav.Link>
-//       <Nav.Link href="#search">Search</Nav.Link>
-//     </Nav>
-//     </Container>
-//   </Navbar>
-
+<Navbar bg="danger" variant="dark" expand="sm">
+    <Container>
+    <Navbar.Brand href="home">MARVELOUS</Navbar.Brand>
+    <Nav className="me-auto">
+      <Nav.Link href="#home">Home</Nav.Link>
+      <Nav.Link href="#search">Search</Nav.Link>
+      <Nav.Link href="#spotlight">Spotlight</Nav.Link>
+      <Nav.Link href="#login">Login</Nav.Link>
+    </Nav>
+    </Container>
+  </Navbar>
 
 
 
@@ -28,7 +27,7 @@
 
 // function TempNav() {
 //   return (
-//     <Navbar bg="dark" variant="dark" expand="lg">
+//     <Navbar bg="danger" variant="dark" expand="sm">
 //       <Navbar.Brand>
 //         {' '}
 //         <Link data-testid="about" to="/" className="nav-link">

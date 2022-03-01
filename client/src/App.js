@@ -16,9 +16,9 @@ import NavBar from "./components/NavBar";
 function App() {
   return (
     <div className= "App">
-      <ReactBootStrap.Navbar expands="sm" bg="danger" variant="dark">
+      <ReactBootStrap.Navbar bg="danger" variant="dark">
     <Container>
-    <ReactBootStrap.Navbar.Brand href="#home">Marvelous</ReactBootStrap.Navbar.Brand>
+    <ReactBootStrap.Navbar.Brand href="#home">MARVELOUS</ReactBootStrap.Navbar.Brand>
     <ReactBootStrap.Nav className="me-auto">
       <ReactBootStrap.Nav.Link href="#home">Home</ReactBootStrap.Nav.Link>
       <ReactBootStrap.Nav.Link href="#search">Search</ReactBootStrap.Nav.Link>
