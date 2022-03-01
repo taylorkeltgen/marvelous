@@ -34,18 +34,19 @@ const Search = () => {
 
 	return (
 		<Container fluid>
-			<Form>
+			<Form class="search" actions="">
 				<Row className="align-items-center">
 					<Col sm={2} className="my-1">
 						<input
-							type="text"
+							type="search"
+              placeholder="Search here..."
               className="searchTerm"
 							value={search}
 							onChange={handleInputChange}
 						></input>
 					</Col>
 					<Col sm={3} className="my-1">
-						<Button type="button" className="searchButton" onClick={clicked}>
+						<Button type="submit" className="searchButton" onClick={clicked}>
 							Search
 						</Button>
 					</Col>
