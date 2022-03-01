@@ -1,15 +1,6 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {
-	Button,
-	Container,
-	Row,
-	Col,
-	Card,
-	CardGroup,
-	Form,
-} from "react-bootstrap";
+import { Button, Container, Row, Col, CardGroup, Form } from "react-bootstrap";
 import HeroList from "../HeroList";
 import axios from "axios";
 
@@ -19,8 +10,8 @@ const Search = () => {
 	const clicked = () => {
 		// declaring variables needed for an API call as per Marvel documentation
 		const md5 = require("md5");
-		const privateKey = "7c102ae9dfa5e000b24a379d896608a72aab9b71";
-		const publicKey = "22a7456573deb77de2473e3e16a78271";
+		const privateKey = "c9e3d0742ac2221695971bb908881f232f6f4a61";
+		const publicKey = "1f3466c186b0df273e3fc7f5e5e11ebc";
 		const ts = new Date().getTime();
 		const stringToHash = ts + privateKey + publicKey;
 		const token = md5(stringToHash);
