@@ -8,6 +8,6 @@ import { Link } from 'react-router-dom';
       <Navbar.Link href="./home">Home</Navbar.Link>
       <Navbar.Link href="./search">Search</Navbar.Link>
       <Navbar.Link href="./spotlight">Spotlight</Navbar.Link>
-      <Navbar.Link href="./login">Login</Navbar.Link>
+      <Navbar.Link href="./pages/login">Login</Navbar.Link>
     </Navbar>
   </Navbar>
