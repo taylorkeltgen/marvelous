@@ -48,12 +48,13 @@ const Search = () => {
 					<Col sm={2} className="my-1">
 						<input
 							type="text"
+              className="searchTerm"
 							value={search}
 							onChange={handleInputChange}
 						></input>
 					</Col>
 					<Col sm={3} className="my-1">
-						<Button type="button" onClick={clicked}>
+						<Button type="button" className="searchButton" onClick={clicked}>
 							Search
 						</Button>
 					</Col>
