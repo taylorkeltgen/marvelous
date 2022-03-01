@@ -5,7 +5,7 @@ import SingleHero from "../components/SingleHero";
 const HeroPage = () => {
 	const [character, setCharacter] = useState([]);
 	const queryParams = new URLSearchParams(window.location.search);
-	const id = queryParams.get("id");
+	const id = queryParams.get("heroid");
 	// declaring variables needed for an API call as per Marvel documentation
 	const md5 = require("md5");
 	const privateKey = "c9e3d0742ac2221695971bb908881f232f6f4a61";

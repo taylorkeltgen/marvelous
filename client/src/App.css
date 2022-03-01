@@ -2,9 +2,22 @@
 	text-align: center;
 }
 
-html,
-body {
-	height: 100%;
+.comic-strip {
+	height: 700px;
+	margin: auto;
+	display: block;
+	max-width: 100%;
+}
+
+.homecontainer {
+	background-color: rgb(46, 0, 0);
+	color: white;
+	justify-content: center;
+	text-align: center;
+}
+
+.navbar {
+	background-color: black;
 }
 
 .App-logo {
@@ -32,10 +45,6 @@ body {
 
 .App-link {
 	color: #ffff;
-}
-
-.min-height {
-	min-height: 100em;
 }
 
 @keyframes App-logo-spin {
