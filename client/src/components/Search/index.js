@@ -12,7 +12,6 @@ import {
 } from "react-bootstrap";
 import HeroList from "../HeroList";
 import axios from "axios";
-require("dotenv").config();
 
 const Search = () => {
 	const [character, setCharacter] = useState([]);

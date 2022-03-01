@@ -13,7 +13,7 @@ const HeroList = ({ heroDatalist }) => {
 					<div key={heroData.id} className="card hero border-0">
 						<div className="hero-card-container">
 							<Link
-								to={`/characters/${heroData.name}`}
+								to={`/singlehero/${heroData.id}`}
 								className="hero-link"
 								style={{ textDecoration: "none" }}
 							>

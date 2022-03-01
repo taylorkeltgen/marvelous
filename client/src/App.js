@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Spotlight from "./pages/Spotlight";
 import TempNav from "./components/TempNav";
+import SingleHero from "./components/SingleHero";
 
 /// App Setup ///
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/search" component={HeroSearch} />
           <Route exact path="/spotlight" component={Spotlight} />
+          <Route exact path="/singlehero" component={SingleHero} />
         </Switch>
         <Footer />
       </>
