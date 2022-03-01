@@ -47,7 +47,7 @@ const Search = () => {
             ></input>
           </Col>
           <Col sm={3} className="my-1">
-            <Button variant= "danger" type="button" onClick={clicked}>
+            <Button type="button" onClick={clicked}>
               Search
             </Button>
           </Col>
