@@ -25,6 +25,7 @@ const resolvers = {
       return Hero.find();
     },
     hero: async (parent, { index }) => {
+      console.log('Query ran..!');
       return Hero.findOne({ index });
     },
   },
@@ -56,13 +57,20 @@ const resolvers = {
       return hero;
     },
 
-    addComment: async (parent, { heroIndex, commentText }, context) => {
+    addComment: async (parent, { index, commentText }, context) => {
       if (context.user) {
         const comment = await Hero.findOneAndUpdate(
-          { heroIndex },
+          { index },
           { $push: { comments: { commentText, username: context.user.username } } },
           { new: true }
         );
+        return comment;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    removeComment: async (parent, { index, commentId }, context) => {
+      if (context.user) {
+        const comment = await Hero.findOneAndUpdate({ index }, { $pull: { comments: { _id: commentId } } }, { new: true });
         return comment;
       }
       throw new AuthenticationError('You need to be logged in!');

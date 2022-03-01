@@ -1,25 +1,34 @@
-import React from 'react'
+// import React from 'react';
+// import { useQuery } from '@apollo/client';
+// import { QUERY_HERO } from '../../utils/queries';
 
-const Comments = ({comments}) => {
-    // if (!hero.length) {
-    //     return <h3>No Comments Yet</h3>;
-    //   }
-console.log(comments)
-  return (
-    <div>
-      {hero &&
-        hero.map(comment => (
-          <div key={comment._id} className="card mb-3">
-            <p className="card-header">
-              comment on {comment.createdAt}
-            </p>
-            <div className="card-body">
-                <p>{comment.commentText}</p>
-            </div>
-          </div>
-        ))}
-    </div>
-  )
-}
+// const Comments = (props) => {
+//   const { loading, data } = useQuery(QUERY_HERO, {
+//     variables: { index: props },
+//   });
+//   const { hero } = data || {};
+//   console.log(hero);
+//   const commentData = props.comments;
+//   console.log(commentData);
+//   // if (loading) {
+//   //   return <div>Loading...</div>;
+//   //   }
 
-export default Comments
+//   return (
+//     <div>
+//       {commentData &&
+//         commentData.map((comment) => (
+//           <div key={comment._id} className="card mb-3">
+//             <p className="card-header">
+//               {comment.username} commented on {comment.createdAt}
+//             </p>
+//             <div className="card-body">
+//               <p>{comment.commentText}</p>
+//             </div>
+//           </div>
+//         ))}
+//     </div>
+//   );
+// };
+
+// export default Comments;
