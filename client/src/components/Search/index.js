@@ -32,6 +32,8 @@ const Search = () => {
     setSearch(event.target.value);
   };
 
+  <div style={{ backgroundImage: "url(/bckgr.png)" }}></div>
+
   return (
     <Container fluid>
       <Form>
