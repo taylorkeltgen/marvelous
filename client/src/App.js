@@ -17,15 +17,13 @@ function App() {
   return (
     <div className= "App">
       <ReactBootStrap.Navbar bg="danger" variant="dark">
-    <Container>
-    <ReactBootStrap.Navbar.Brand href="#home">MARVELOUS</ReactBootStrap.Navbar.Brand>
+    <ReactBootStrap.Navbar.Brand href="/">MARVELOUS</ReactBootStrap.Navbar.Brand>
     <ReactBootStrap.Nav className="me-auto">
-      <ReactBootStrap.Nav.Link href="#home">Home</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#search">Search</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#spotlight">Spotlight</ReactBootStrap.Nav.Link>
-      <ReactBootStrap.Nav.Link href="#login">Login</ReactBootStrap.Nav.Link>
+      <ReactBootStrap.Nav.Link href="../home">Home</ReactBootStrap.Nav.Link>
+      <ReactBootStrap.Nav.Link href="../search">Search</ReactBootStrap.Nav.Link>
+      <ReactBootStrap.Nav.Link href="../spotlight">Spotlight</ReactBootStrap.Nav.Link>
+      <ReactBootStrap.Nav.Link href="../login">Login</ReactBootStrap.Nav.Link>
     </ReactBootStrap.Nav>
-    </Container>
   </ReactBootStrap.Navbar>
       </div>
   );
