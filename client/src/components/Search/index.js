@@ -11,8 +11,8 @@ import {
   CardGroup,
   Form,
 } from "react-bootstrap";
+import HeroList from "../HeroList";
 import axios from "axios";
-require("dotenv").config();
 
 const Search = () => {
   const [character, setCharacter] = useState([]);
@@ -62,20 +62,7 @@ const Search = () => {
       </Form>
       <Container>
         <CardGroup>
-          {character &&
-            character.map((hero) => (
-              <Row xs={2}>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
-                  />
-                  <Card.Body>
-                    <Card.Title>{hero.name}</Card.Title>
-                  </Card.Body>
-                </Card>
-              </Row>
-            ))}
+          <HeroList heroDatalist={character}></HeroList>
         </CardGroup>
       </Container>
     </Container>

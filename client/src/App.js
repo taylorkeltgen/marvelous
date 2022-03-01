@@ -9,14 +9,14 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Spotlight from "./pages/Spotlight";
-import TempNav from "./components/TempNav";
+import NavBar from "./components/NavBar";
 
 /// App Setup ///
 function App() {
   return (
     <Router>
       <>
-        <TempNav />
+        <NavBar />
 
         <Switch>
           <Route exact path="/" component={Home} />
@@ -24,6 +24,7 @@ function App() {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/search" component={HeroSearch} />
           <Route exact path="/spotlight" component={Spotlight} />
+          <Route exact path="/singlehero" component={SingleHero} />
         </Switch>
         <Footer />
       </>
