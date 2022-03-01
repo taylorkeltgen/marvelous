@@ -9,15 +9,14 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Spotlight from "./pages/Spotlight";
-import TempNav from "./components/TempNav";
-import SingleHero from "./components/SingleHero";
+import NavBar from "./components/NavBar";
 
 /// App Setup ///
 function App() {
   return (
     <Router>
       <>
-        <TempNav />
+        <NavBar />
 
         <Switch>
           <Route exact path="/" component={Home} />
