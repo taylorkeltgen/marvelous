@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import * as ReactBootStrap from "react-bootstrap";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // COMPONENT IMPORTS //
@@ -9,25 +10,22 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Spotlight from "./pages/Spotlight";
-import TempNav from "./components/TempNav";
+import NavBar from "./components/NavBar";
 
 /// App Setup ///
 function App() {
   return (
-    <Router>
-      <>
-        <TempNav />
-
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/search" component={HeroSearch} />
-          <Route exact path="/spotlight" component={Spotlight} />
-        </Switch>
-        <Footer />
-      </>
-    </Router>
+    <div className= "App">
+      <ReactBootStrap.Navbar bg="danger" variant="dark">
+    <ReactBootStrap.Navbar.Brand href="/">MARVELOUS</ReactBootStrap.Navbar.Brand>
+    <ReactBootStrap.Nav className="me-auto">
+      <ReactBootStrap.Nav.Link href="../home">Home</ReactBootStrap.Nav.Link>
+      <ReactBootStrap.Nav.Link href="../search">Search</ReactBootStrap.Nav.Link>
+      <ReactBootStrap.Nav.Link href="../spotlight">Spotlight</ReactBootStrap.Nav.Link>
+      <ReactBootStrap.Nav.Link href="../login">Login</ReactBootStrap.Nav.Link>
+    </ReactBootStrap.Nav>
+  </ReactBootStrap.Navbar>
+      </div>
   );
 }
 

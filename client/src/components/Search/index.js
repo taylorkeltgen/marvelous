@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Container, Row, Col, Card, CardGroup, Form } from 'react-bootstrap';
-import HeroList from '../HeroList';
-import axios from 'axios';
-require('dotenv').config();
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import {
+	Button,
+	Container,
+	Row,
+	Col,
+	Card,
+	CardGroup,
+	Form,
+} from "react-bootstrap";
+import HeroList from "../HeroList";
+import axios from "axios";
 
 const Search = () => {
   const [character, setCharacter] = useState([]);
