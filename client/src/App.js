@@ -9,7 +9,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Spotlight from "./pages/Spotlight";
 import NavBar from "./components/NavBar";
-import SingleHero from "./components/SingleHero";
+import Hero from "./pages/Hero";
 /// App Setup ///
 function App() {
 	return (
@@ -22,7 +22,7 @@ function App() {
 				<Route exact path="/signup" component={Signup} />
 				<Route exact path="/search" component={HeroSearch} />
 				<Route exact path="/spotlight" component={Spotlight} />
-				<Route path="/singlehero" component={SingleHero} />
+				<Route path="/singlehero" component={Hero} />
 			</Switch>
 			<Footer />
 		</Router>
