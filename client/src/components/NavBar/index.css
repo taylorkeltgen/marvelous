@@ -1,0 +1,12 @@
+.page-title {
+	color: white;
+	font-family: GraublauWeb;
+	background-color: red;
+	padding: 5px 5px 0px 5px;
+}
+
+@font-face {
+	font-family: GraublauWeb;
+	src: url("../../assets/fonts/BentonSans\ Comp\ Black\ Regular.otf")
+		format("opentype");
+}
