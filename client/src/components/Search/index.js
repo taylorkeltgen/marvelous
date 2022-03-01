@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import background from "../../assets/images/bckgr3.jpeg"
 import { Button, Container, Row, Col, CardGroup, Form } from "react-bootstrap";
 import HeroList from "../HeroList";
 import axios from "axios";
+
 
 const Search = () => {
   const [character, setCharacter] = useState([]);
@@ -32,8 +34,6 @@ const Search = () => {
     setSearch(event.target.value);
   };
 
-  <div style={{ backgroundImage: "url(/bckgr.png)" }}></div>
-
   return (
     <Container fluid>
       <Form>
@@ -53,6 +53,9 @@ const Search = () => {
           </Col>
         </Row>
       </Form>
+      <div>
+        <img src={background} alt="background" width="1789" height="" ></img>
+      </div>
       <Container>
         <CardGroup>
           <HeroList heroDatalist={character}></HeroList>

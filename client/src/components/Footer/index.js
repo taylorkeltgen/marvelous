@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
-import github from "../../assets/github-11-32.png";
-import marvel from "../../assets/marvel-logo.png";
+import github from "../../assets/images/github-11-32.png";
+import marvel from "../../assets/images/marvel-logo.png";
 
 function Footer() {
 	return (
