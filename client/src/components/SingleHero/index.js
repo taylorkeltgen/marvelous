@@ -1,17 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./index.css";
-// //import { Link } from "react-router-dom";
 
-
-
-const SingleHero = ({ heroDatalist }) => {
-	
-    
+const SingleHero = (HeroData) => {
 	return (
 		<div>
-		
+			<h1>{HeroData.name}</h1>
+			<h1>{HeroData.id}</h1>
 		</div>
 	);
 };
 
-export default SingleHero; 
+export default SingleHero;
