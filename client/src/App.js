@@ -14,17 +14,21 @@ import Hero from "./pages/Hero";
 function App() {
 	return (
 		<Router>
-			<NavBar />
+			<div className="page-container">
+				<div className="content-wrap">
+					<NavBar />
 
-			<Switch>
-				<Route exact path="/" component={Home} />
-				<Route exact path="/login" component={Login} />
-				<Route exact path="/signup" component={Signup} />
-				<Route exact path="/search" component={HeroSearch} />
-				<Route exact path="/spotlight" component={Spotlight} />
-				<Route path="/singlehero" component={Hero} />
-			</Switch>
-			<Footer />
+					<Switch>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/login" component={Login} />
+						<Route exact path="/signup" component={Signup} />
+						<Route exact path="/search" component={HeroSearch} />
+						<Route exact path="/spotlight" component={Spotlight} />
+						<Route path="/singlehero" component={Hero} />
+					</Switch>
+				</div>
+				<Footer />
+			</div>
 		</Router>
 	);
 }

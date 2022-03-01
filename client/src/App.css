@@ -2,6 +2,14 @@
 	text-align: center;
 }
 
+.page-container {
+	position: relative;
+	min-height: 100vh;
+}
+
+.content-wrap {
+	padding-bottom: 2.5rem;
+}
 .comic-strip {
 	height: 700px;
 	margin: auto;
