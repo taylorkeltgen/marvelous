@@ -37,13 +37,27 @@ export const ADD_HERO = gql`
 `;
 
 export const ADD_COMMENT = gql`
-  mutation addComment($featuredHeroId: ID!, $commentText: String!) {
-    addComment(featuredHeroId: $featuredHeroId, commentText: $commentText) {
+  mutation addComment($index: Int!, $commentText: String!) {
+    addComment(index: $index, commentText: $commentText) {
       _id
+      index
       name
-      bio
-      trivia
-      image
+      comments {
+        _id
+        commentText
+        createdAt
+        username
+      }
+    }
+  }
+`;
+
+export const REMOVE_COMMENT = gql`
+  mutation removeComment($index: Int!, $commentId: ID!) {
+    removeComment(index: $index, commentId: $commentId) {
+      _id
+      index
+      name
       comments {
         _id
         commentText
