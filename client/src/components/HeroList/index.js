@@ -7,7 +7,7 @@ const HeroList = ({ heroDatalist }) => {
 	// 	return <h3>No Heros Yet</h3>;
 	// }
 	return (
-		<div className="row justify-content-center">
+		<div className="row justify-content-space-between">
 			{heroDatalist &&
 				heroDatalist.map((heroData) => (
 					<div key={heroData.id} className="card hero border-0">
