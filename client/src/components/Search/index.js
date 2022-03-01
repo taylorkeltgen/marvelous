@@ -5,14 +5,13 @@ import HeroList from "../HeroList";
 import axios from "axios";
 
 const Search = () => {
-<<<<<<< HEAD
   const [character, setCharacter] = useState([]);
   const [search, setSearch] = useState();
   const clicked = () => {
     // declaring variables needed for an API call as per Marvel documentation
     const md5 = require("md5");
-    const privateKey = "8b234d8fc59f4e05105f1acaed285c722fe7fb14";
-    const publicKey = "46789535638cb3c3e0e68269ee2d6844";
+    const privateKey = "c9e3d0742ac2221695971bb908881f232f6f4a61";
+    const publicKey = "1f3466c186b0df273e3fc7f5e5e11ebc";
     const ts = new Date().getTime();
     const stringToHash = ts + privateKey + publicKey;
     const token = md5(stringToHash);
@@ -21,60 +20,43 @@ const Search = () => {
       search;
     const testUrl =
       BASE_URL + "&ts=" + ts + "&apikey=" + publicKey + "&hash=" + token;
-=======
-	const [character, setCharacter] = useState([]);
-	const [search, setSearch] = useState();
-	const clicked = () => {
-		// declaring variables needed for an API call as per Marvel documentation
-		const md5 = require("md5");
-		const privateKey = "c9e3d0742ac2221695971bb908881f232f6f4a61";
-		const publicKey = "1f3466c186b0df273e3fc7f5e5e11ebc";
-		const ts = new Date().getTime();
-		const stringToHash = ts + privateKey + publicKey;
-		const token = md5(stringToHash);
-		const BASE_URL =
-			"https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=" +
-			search;
-		const testUrl =
-			BASE_URL + "&ts=" + ts + "&apikey=" + publicKey + "&hash=" + token;
->>>>>>> 27ea0ba3564a800516941844a4126a64b53a9597
 
-		// making API call using axios
-		axios.get(`${testUrl}`).then((response) => {
-			console.log(response.data.data);
-			setCharacter(response.data.data.results);
-		});
-	};
-	// collecting user inputed search term
-	const handleInputChange = (event) => {
-		setSearch(event.target.value);
-	};
+    // making API call using axios
+    axios.get(`${testUrl}`).then((response) => {
+      console.log(response.data.data);
+      setCharacter(response.data.data.results);
+    });
+  };
+  // collecting user inputed search term
+  const handleInputChange = (event) => {
+    setSearch(event.target.value);
+  };
 
-	return (
-		<Container fluid>
-			<Form>
-				<Row className="align-items-center">
-					<Col sm={2} className="my-1">
-						<input
-							type="text"
-							value={search}
-							onChange={handleInputChange}
-						></input>
-					</Col>
-					<Col sm={3} className="my-1">
-						<Button type="button" onClick={clicked}>
-							Search
-						</Button>
-					</Col>
-				</Row>
-			</Form>
-			<Container>
-				<CardGroup>
-					<HeroList heroDatalist={character}></HeroList>
-				</CardGroup>
-			</Container>
-		</Container>
-	);
+  return (
+    <Container fluid>
+      <Form>
+        <Row className="align-items-center">
+          <Col sm={2} className="my-1">
+            <input
+              type="text"
+              value={search}
+              onChange={handleInputChange}
+            ></input>
+          </Col>
+          <Col sm={3} className="my-1">
+            <Button type="button" onClick={clicked}>
+              Search
+            </Button>
+          </Col>
+        </Row>
+      </Form>
+      <Container>
+        <CardGroup>
+          <HeroList heroDatalist={character}></HeroList>
+        </CardGroup>
+      </Container>
+    </Container>
+  );
 };
 
 export default Search;
