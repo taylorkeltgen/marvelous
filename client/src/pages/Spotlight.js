@@ -1,18 +1,17 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_HERO } from '../utils/queries';
-// import Comments from '../components/Comments';
+import CommentForm from '../components/CommentForm';
 
 const i = 5
 
-const Spotlight = () => {
+const Spotlight = (prop) => {
     // use useQuery hook to make query request
-    const { loading, error, data } = useQuery(QUERY_HERO,
+    const { loading, data } = useQuery(QUERY_HERO,
    { variables: { index: i }
 });
     const {hero} = data || {};
     // console.log(hero);
-
 
     if (loading) {
     return <div>Loading...</div>;
@@ -22,22 +21,24 @@ const Spotlight = () => {
     <div>
         <div className="card">
             <div className="hero-card-container">
-            <div className="card-body">
-                <h3>Spotlight Hero</h3>
-                <h2 className="hero-name">{hero.name}</h2>
-                <div className="hero-card">
-                <p className="secondary-text">Bio:</p>
-                <p className="secondary-text">{hero.bio}</p>
+                <div className="card-body">
+                    <h3>Spotlight Hero</h3>
+                    <h2 className="hero-name">{hero.name}</h2>
+                    <div className="hero-card">
+                        <p className="secondary-text">Bio:</p>
+                        <p className="secondary-text">{hero.bio}</p>
+                    </div>
+                </div>
+                <div className="hero-image card-body">
+                    <img src={hero.image} alt={hero.name} className="card-img-top" />
+                </div>
+                <div className="hero-trivia">
+                    <p>{hero.trivia}</p>
                 </div>
             </div>
-            <div className="hero-image card-body">
-                <img src="{hero.image}" alt={hero.name} className="card-img-top" />
-            </div>
-            <div className="hero-trivia">
-                <p>{hero.trivia}</p>
-            </div>
-            </div>
         </div>
+
+        <CommentForm hero={hero}/>
         <div>
             {hero.comments &&
                 hero.comments.map((comment) => (
@@ -46,7 +47,7 @@ const Spotlight = () => {
                     {comment.username} commented on {comment.createdAt}
                     </p>
                     <div className="card-body">
-                    <p>{comment.commentText}</p>
+                         <p>{comment.commentText}</p>
                     </div>
                 </div>
                 ))}
