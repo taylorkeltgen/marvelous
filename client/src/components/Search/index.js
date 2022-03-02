@@ -36,7 +36,7 @@ const Search = () => {
 	return (
 		<Container fluid>
 			{/* <h1>Superhero Search</h1> */}
-			<Form className="d-flex justify-content-center my-5" onSubmit={clicked}>
+			<Form className="d-flex justify-content-center my-5">
 				<input
 					className="form-control-lg text-center px-5 mx-2"
 					aria-label="search bar"
@@ -45,7 +45,7 @@ const Search = () => {
 					value={search}
 					onChange={handleInputChange}
 				></input>
-				<Button type="submit" variant="danger">
+				<Button type="button" variant="danger" onClick={clicked}>
 					Search
 				</Button>
 			</Form>
