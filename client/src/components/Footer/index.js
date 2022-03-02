@@ -5,7 +5,7 @@ import marvel from "../../assets/marvel-logo.png";
 
 function Footer() {
 	return (
-		<div className="page-footer">
+		<div className="footer">
 			<footer className="row p-4">
 				<div className="col-9">
 					<p>

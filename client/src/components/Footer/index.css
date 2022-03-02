@@ -1,9 +1,10 @@
 footer {
 	background-color: black;
 	color: white;
-	position: absolute;
+	clear: both;
+	position: relative;
+	height: 150px;
 	bottom: 0;
-	width: 100%;
 }
 
 .marvel-logo {
