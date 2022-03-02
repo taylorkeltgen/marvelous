@@ -1,16 +1,16 @@
 footer {
-	background-color: black;
-	color: white;
-	clear: both;
-	position: relative;
-	height: 150px;
-	bottom: 0;
+  background-color: black;
+  color: white;
+  clear: both;
+  position: relative;
+  height: 125px;
+  bottom: 0;
 }
 
 .marvel-logo {
-	height: 32px;
+  height: 32px;
 }
 
 .links {
-	text-align: center;
+  text-align: center;
 }
