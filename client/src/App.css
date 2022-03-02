@@ -1,77 +1,114 @@
 .App {
-  text-align: center;
+	text-align: center;
+}
+
+.app-container {
+	margin: 0;
+	min-height: 100vh;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
 }
 
 .page-container {
-  position: relative;
-  min-height: 100vh;
+	position: relative;
+	min-height: 100vh;
 }
 
-/* here */
+/* here is the background images*/
 .signup-container {
-  background-image: url("https://i.ibb.co/Kw2x5DG/marvel-signup-2.jpg");
+	background-image: url("https://i.ibb.co/Kw2x5DG/marvel-signup-2.jpg");
 }
 .login-container {
-  background-image: url("https://marvelous-project-3.s3.us-east-2.amazonaws.com/marvel-comic-strip.png");
+	background-image: url("https://marvelous-project-3.s3.us-east-2.amazonaws.com/marvel-comic-strip.png");
 }
 
+.spotlight-container {
+	background-image: url("https://i.ibb.co/Kw2x5DG/marvel-signup-2.jpg");
+}
+
+/*Spolight page css*/
+.spotlight-title {
+	font-size: 70px;
+	color: white;
+	font-family: GraublauWeb;
+	background-color: rgb(0, 0, 0);
+	padding: 5px 5px 0px 5px;
+}
+
+.spotlight-name {
+	font-size: 70px;
+	color: white;
+	font-family: GraublauWeb;
+	background-color: rgb(0, 0, 0);
+	padding: 5px 40px 0px 40px;
+	border-radius: 100px;
+}
+
+.comment-container {
+	overflow-y: scroll;
+}
 .form {
-  justify-content: center;
-  align-items: center;
+	justify-content: center;
+	align-items: center;
 }
 .content-wrap {
-  padding-bottom: 150px;
+	padding-bottom: 150px;
 }
 .comic-strip {
-  height: 700px;
-  margin: auto;
-  display: block;
-  max-width: 100%;
+	height: 700px;
+	margin: auto;
+	display: block;
+	max-width: 100%;
 }
 
 .homecontainer {
-  background-color: rgb(46, 0, 0);
-  color: white;
-  justify-content: center;
-  text-align: center;
+	background-color: rgb(46, 0, 0);
+	color: white;
+	justify-content: center;
+	text-align: center;
 }
 
 .navbar {
-  background-color: black;
+	background-color: black;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+	height: 40vmin;
+	pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+	.App-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
 }
 
 .App-header {
-  background-color: #ffff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  font-family: sans serif typeface;
-  color: white;
+	background-color: #ffff;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	font-family: sans serif typeface;
+	color: white;
 }
 
 .App-link {
-  color: #ffff;
+	color: #ffff;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
