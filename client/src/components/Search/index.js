@@ -10,7 +10,8 @@ import "./index.css"
 const Search = () => {
   const [character, setCharacter] = useState([]);
   const [search, setSearch] = useState();
-  const clicked = () => {
+  const clicked = (event) => {
+    event.preventDefault()
     // declaring variables needed for an API call as per Marvel documentation
     const md5 = require("md5");
     const privateKey = "c9e3d0742ac2221695971bb908881f232f6f4a61";
@@ -38,14 +39,14 @@ const Search = () => {
   return (
     <Container fluid>
       {/* <h1>Superhero Search</h1> */}
-      <Form className="d-flex justify-content-center my-5">
+      <Form className="d-flex justify-content-center my-5" onSubmit={clicked}>
         <input className="form-control-lg text-center px-5 mx-2" aria-label="search bar"
           type="text"
           placeholder="Enter a superhero name"
           value={search}
           onChange={handleInputChange}
         ></input>
-        <Button type="button" variant="danger" onClick={clicked}>
+        <Button type="submit" variant="danger">
           Search
         </Button>
       </Form >
