@@ -6,7 +6,7 @@ import marvel from "../../assets/images/marvel-logo.png";
 function Footer() {
 	return (
 		<div className="footer">
-			<footer className="row p-4">
+			<footer className="d-flex p-4">
 				<div className="col-9">
 					<p>
 						Data provided by Marvel. &copy;{new Date().getFullYear()} Marvel
