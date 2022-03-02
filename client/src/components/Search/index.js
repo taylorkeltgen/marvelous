@@ -33,11 +33,10 @@ const Search = () => {
 		setSearch(event.target.value);
 	};
 
-<<<<<<< HEAD
 	return (
 		<Container fluid>
 			{/* <h1>Superhero Search</h1> */}
-			<Form className="d-flex justify-content-center my-5">
+			<Form className="d-flex justify-content-center my-5" onSubmit={clicked}>
 				<input
 					className="form-control-lg text-center px-5 mx-2"
 					aria-label="search bar"
@@ -46,7 +45,7 @@ const Search = () => {
 					value={search}
 					onChange={handleInputChange}
 				></input>
-				<Button type="button" variant="danger" onClick={clicked}>
+				<Button type="submit" variant="danger">
 					Search
 				</Button>
 			</Form>
@@ -57,29 +56,6 @@ const Search = () => {
 			</Container>
 		</Container>
 	);
-=======
-  return (
-    <Container fluid>
-      {/* <h1>Superhero Search</h1> */}
-      <Form className="d-flex justify-content-center my-5" onSubmit={clicked}>
-        <input className="form-control-lg text-center px-5 mx-2" aria-label="search bar"
-          type="text"
-          placeholder="Enter a superhero name"
-          value={search}
-          onChange={handleInputChange}
-        ></input>
-        <Button type="submit" variant="danger">
-          Search
-        </Button>
-      </Form >
-      <Container className="my-5">
-        <CardGroup>
-          <HeroList heroDatalist={character}></HeroList>
-        </CardGroup>
-      </Container>
-    </Container >
-  );
->>>>>>> ad315f1eebde7cab25b85901c6e43e39cba55b86
 };
 
 export default Search;
