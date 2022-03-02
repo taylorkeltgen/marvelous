@@ -40,39 +40,47 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
+    <main className="login-container row d-flex justify-content-center align-items-center ">
       <div className="col-12 col-md-6">
-        <div className="card">
-          <h4 className="card-header">Login</h4>
-          <div className="card-body">
+        <div className="card text-white bg-dark">
+          <h4 className="card-header text-center">Login</h4>
+          <div className="card-body align-text-center">
             <form onSubmit={handleFormSubmit}>
-              <input
-                className="form-input"
-                placeholder="Your email"
-                name="email"
-                type="email"
-                id="email"
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                placeholder="******"
-                name="password"
-                type="password"
-                id="password"
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <button className="btn d-block w-100" type="submit">
-                Submit
-              </button>
+              <div className="form-group mb-2">
+                <label>Email address</label>
+                <input
+                  className="form-control"
+                  placeholder="Enter email"
+                  name="email"
+                  type="email"
+                  id="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="form-group mb-4">
+                <label>Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Enter password"
+                  name="password"
+                  id="password"
+                  value={formState.password}
+                  onChange={handleChange}
+                />
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <button type="submit" className="btn btn-danger btn-block">
+                  Submit
+                </button>
+              </div>
             </form>
 
             {error && <div>Login failed</div>}
           </div>
           <p>
-            <Link data-testid="login" to="/login" className="nav-link">
+            <Link data-testid="signup" to="/signup" className="nav-link">
               Signup now!
             </Link>
           </p>

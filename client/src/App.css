@@ -7,8 +7,16 @@
 	min-height: 100vh;
 }
 
+.login-container {
+	background-image: url("https://marvelous-project-3.s3.us-east-2.amazonaws.com/marvel-comic-strip.png");
+}
+
+.form {
+	justify-content: center;
+	align-items: center;
+}
 .content-wrap {
-	padding-bottom: 2.5rem;
+	padding-bottom: 150px;
 }
 .comic-strip {
 	height: 700px;
