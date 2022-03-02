@@ -80,7 +80,12 @@ const Login = (props) => {
 						{error && <div>Login failed</div>}
 					</div>
 					<p>
-						<Link data-testid="signup" to="/signup" className="nav-link">
+						<Link
+							data-testid="signup"
+							style={{ textDecoration: "none" }}
+							to="/signup"
+							className="nav-link"
+						>
 							Signup now!
 						</Link>
 					</p>

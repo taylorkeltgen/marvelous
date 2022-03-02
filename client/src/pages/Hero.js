@@ -30,7 +30,7 @@ const HeroPage = () => {
 	}, []);
 
 	return (
-		<div>
+		<div className="search-bg">
 			<SingleHero HeroData={character} HeroImage={image} />
 		</div>
 	);

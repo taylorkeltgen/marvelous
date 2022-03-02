@@ -12,7 +12,7 @@ function NavBar() {
   };
 
   return (
-    <Navbar variant="dark" expand="lg">
+    <Navbar variant="dark" expand="sm">
       <Navbar.Brand>
         {' '}
         <Link data-testid="home" to="/" className="nav-link">

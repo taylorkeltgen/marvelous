@@ -10,18 +10,20 @@ const HeroList = ({ heroDatalist }) => {
 		<div className="row justify-content-space-between">
 			{heroDatalist &&
 				heroDatalist.map((heroData) => (
-					<div key={heroData.id} className="card hero border-0">
+					<div key={heroData.id} className="card hero border-0 p-0">
 						<div className="hero-card-container">
 							<Link
 								to={`singlehero?heroid=${heroData.id}`}
 								className="hero-link"
 								style={{ textDecoration: "none" }}
 							>
-								<img
-									src={`${heroData.thumbnail.path}.${heroData.thumbnail.extension}`}
-									alt={heroData.name}
-									className="card-img-top hero-img-top"
-								/>
+								<div className="img-container">
+									<img
+										src={`${heroData.thumbnail.path}.${heroData.thumbnail.extension}`}
+										alt={heroData.name}
+										className="card-img-top hero-img-top"
+									/>
+								</div>
 								<div className="card-body hero-body">
 									<p className="hero-name">{heroData.name}</p>
 								</div>

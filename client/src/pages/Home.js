@@ -13,16 +13,18 @@ const Home = () => {
 			>
 				<Col>
 					<h1>Welcome to Marvelous</h1>
-					<p>comic book lovers, movie fans, and newcomers!</p>
+					<p>...comic book lovers, movie fans, and newcomers!</p>
 					<p>Each week we introduce a new character.</p>
-					<p>Want more selections?</p>
-					<p>Search through the entire Marvel API database 
-						to learn about your favorite comic book superheros and villians.</p>
+					<p>
+						Want more selections? Search through the entire Marvel API database
+						<br />
+						to learn about your favorite comic book superheroes and villains.
+					</p>
 					<Link to="/spotlight" style={{ textDecoration: "none" }}>
-						<Button variant="secondary">View featured hero</Button>{" "}
+						<Button variant="light">View featured hero</Button>{" "}
 					</Link>
 					<Link to="/search" style={{ textDecoration: "none" }}>
-						<Button variant="danger">Search Heros</Button>{" "}
+						<Button variant="danger mx-2">Search Heroes</Button>{" "}
 					</Link>
 				</Col>
 				<Col className="comic-strip-container">
