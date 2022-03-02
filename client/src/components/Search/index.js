@@ -47,15 +47,15 @@ const Search = () => {
             ></input>
           </Col>
           <Col sm={3} className="my-1">
-            <Button variant= "danger" type="button" onClick={clicked}>
+            <Button type="button" variant="danger" onClick={clicked}>
               Search
             </Button>
           </Col>
         </Row>
       </Form>
-        <div>
-          <img src={background} alt="background" width="1789" height="" ></img>
-        </div>
+      <div>
+        <img src={background} alt="background" width="100%" height="auto" ></img>
+      </div>
       <Container>
         <CardGroup>
           <HeroList heroDatalist={character}></HeroList>

@@ -25,7 +25,6 @@ const resolvers = {
       return Hero.find();
     },
     hero: async (parent, { index }) => {
-      console.log('Query ran..!');
       return Hero.findOne({ index });
     },
   },
