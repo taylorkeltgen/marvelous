@@ -53,9 +53,9 @@ const Search = () => {
           </Col>
         </Row>
       </Form>
-      <div>
-        <img src={background} alt="background" width="1789" height="" ></img>
-      </div>
+        <div>
+          <img src={background} alt="background" width="1789" height="" ></img>
+        </div>
       <Container>
         <CardGroup>
           <HeroList heroDatalist={character}></HeroList>
