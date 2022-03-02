@@ -54,7 +54,7 @@ const Search = () => {
         </Row>
       </Form>
       <div>
-        <img src={background} alt="background" width="1760" height="" ></img>
+        <img src={background} alt="background" width="100%" height="auto" ></img>
       </div>
       <Container>
         <CardGroup>
