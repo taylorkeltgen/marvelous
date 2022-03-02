@@ -30,7 +30,7 @@ const HeroPage = () => {
 	}, []);
 
 	return (
-		<div>
+		<div className="singlehero-container">
 			<SingleHero HeroData={character} HeroImage={image} />
 		</div>
 	);
