@@ -15,7 +15,6 @@ function App() {
   return (
     <Router>
       <NavBar />
-
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
@@ -24,7 +23,6 @@ function App() {
         <Route exact path="/spotlight" component={Spotlight} />
         <Route path="/singlehero" component={Hero} />
       </Switch>
-
       <Footer />
     </Router>
   );

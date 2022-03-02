@@ -21,9 +21,9 @@ function NavBar() {
           <h1 className="page-title">MARVELOUS</h1>
         </Link>
       </Navbar.Brand>
-      <Container className="justify-content-md-center">
+      {/* <Container className="justify-content-md-center">
         <img className="navImg" src={gif} alt="Iron Man"></img>
-      </Container>
+      </Container> */}
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <div className="container">

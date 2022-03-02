@@ -18,7 +18,6 @@ const CommentForm = (props) => {
   // Comment submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(commentText);
     try {
       await addComment({
         variables: { index, commentText },

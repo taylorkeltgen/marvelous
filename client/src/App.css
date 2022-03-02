@@ -9,10 +9,10 @@
 
 /* here */
 .signup-container {
-  background-image: url("https://i.ibb.co/Kw2x5DG/marvel-signup-2.jpg");
+  background-image: url('https://i.ibb.co/Kw2x5DG/marvel-signup-2.jpg');
 }
 .login-container {
-  background-image: url("https://marvelous-project-3.s3.us-east-2.amazonaws.com/marvel-comic-strip.png");
+  background-image: url('https://marvelous-project-3.s3.us-east-2.amazonaws.com/marvel-comic-strip.png');
 }
 
 .form {
