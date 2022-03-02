@@ -3,13 +3,13 @@ const { Hero, User } = require('../models');
 
 db.once('open', async () => {
   // create Test User
-  const seedUsers = [
-    {
-      username: 'test',
-      email: 'test@test.com',
-      password: 'test123',
-    },
-  ];
+  // const seedUsers = [
+  //   {
+  //     username: 'test',
+  //     email: 'test@test.com',
+  //     password: 'test123',
+  //   },
+  // ];
 
   // create Featured Heroes
   const seedHeroes = [
@@ -52,8 +52,8 @@ db.once('open', async () => {
 
   await User.deleteMany({});
   console.log('--- REMOVING ALL USERS ---');
-  await User.insertMany(seedUsers);
-  console.log('--- INSERTING USERS ---');
+  // await User.insertMany(seedUsers);
+  // console.log('--- INSERTING USERS ---');
   await Hero.deleteMany({});
   console.log('--- REMOVING ALL HEROES ---');
   await Hero.insertMany(seedHeroes);
