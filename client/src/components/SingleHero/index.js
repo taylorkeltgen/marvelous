@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Container, Row, Col } from 'react-bootstrap';
+import { Card, Container, Row, Col } from "react-bootstrap";
 
 const SingleHero = (props) => {
 	const hero = props.HeroData;
@@ -11,16 +11,16 @@ const SingleHero = (props) => {
 		<Container>
 			<Row className="justify-content-md-center">
 				<Col md="auto">
-		<Card style={{ width: '25rem' }}>
-  <Card.Img variant="top" src={image} alt={hero.name} />
-  <Card.Body>
-    <Card.Title>{hero.name}</Card.Title>
-    <Card.Text>{hero.description}</Card.Text>
-  </Card.Body>
-</Card>
-</Col>
+					<Card style={{ width: "25rem" }}>
+						<Card.Img variant="top" src={image} alt={hero.name} />
+						<Card.Body>
+							<Card.Title>{hero.name}</Card.Title>
+							<Card.Text>{hero.description}</Card.Text>
+						</Card.Body>
+					</Card>
+				</Col>
 			</Row>
-</Container>
+		</Container>
 	);
 };
 
