@@ -1,7 +1,7 @@
 .hero {
-	width: 12rem;
+	width: 11rem;
 	margin-bottom: 10px;
-	margin-right: 20px;
+	margin-right: 2rem;
 }
 
 .hero-body {
@@ -47,6 +47,19 @@
 	color: #bbb;
 }
 
+.img-container {
+	overflow: hidden;
+}
 .hero-img-top {
 	height: 175px;
+	transition: transform 0.2s;
+}
+
+.hero:hover .hero-img-top {
+	transform: scale(1.1);
+}
+
+.hero:hover .hero-body {
+	transition: 0.2s;
+	background-color: rgb(22, 22, 22);
 }

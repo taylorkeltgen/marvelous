@@ -1,12 +1,12 @@
 import React from "react";
 import "./index.css";
-import github from "../../assets/github-11-32.png";
-import marvel from "../../assets/marvel-logo.png";
+import github from "../../assets/images/github-11-32.png";
+import marvel from "../../assets/images/marvel-logo.png";
 
 function Footer() {
 	return (
-		<div className="page-footer">
-			<footer className="row p-4">
+		<div className="footer">
+			<footer className="d-flex p-4">
 				<div className="col-9">
 					<p>
 						Data provided by Marvel. &copy;{new Date().getFullYear()} Marvel

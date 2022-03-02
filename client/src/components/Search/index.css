@@ -1,5 +1,8 @@
-img {
-  height: 250px;
-  width: 250px;
+.search-bg {
+  background-image: url(https://marvelous-project-3.s3.us-east-2.amazonaws.com/marvel-characters-wallpaper-bw.jpeg);
 }
 
+.search-bar-bg {
+  background-color: white;
+  /* padding-left: 50px;; */
+}
