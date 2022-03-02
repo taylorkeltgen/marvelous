@@ -4,6 +4,7 @@ import background from "../../assets/images/bckgr3.jpeg"
 import { Button, Container, Row, Col, CardGroup, Form } from "react-bootstrap";
 import HeroList from "../HeroList";
 import axios from "axios";
+import "./index.css"
 
 
 const Search = () => {
@@ -36,32 +37,24 @@ const Search = () => {
 
   return (
     <Container fluid>
-      <Form>
-        <Row className="align-items-center">
-          <Col sm={2} className="my-1">
-            <input
-              type="text"
-              placeholder="Search here..."
-              value={search}
-              onChange={handleInputChange}
-            ></input>
-          </Col>
-          <Col sm={3} className="my-1">
-            <Button type="button" variant="danger" onClick={clicked}>
-              Search
-            </Button>
-          </Col>
-        </Row>
-      </Form>
-      <div>
-        <img src={background} alt="background" width="100%" height="auto" ></img>
-      </div>
-      <Container>
+      {/* <h1>Superhero Search</h1> */}
+      <Form className="d-flex justify-content-center my-5">
+        <input className="form-control-lg text-center px-5 mx-2" aria-label="search bar"
+          type="text"
+          placeholder="Enter a superhero name"
+          value={search}
+          onChange={handleInputChange}
+        ></input>
+        <Button type="button" variant="danger" onClick={clicked}>
+          Search
+        </Button>
+      </Form >
+      <Container className="my-5">
         <CardGroup>
           <HeroList heroDatalist={character}></HeroList>
         </CardGroup>
       </Container>
-    </Container>
+    </Container >
   );
 };
 
