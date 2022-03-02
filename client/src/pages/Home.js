@@ -6,7 +6,7 @@ import { Button, Container, Image, Row, Col } from "react-bootstrap";
 
 const Home = () => {
   return (
-    <Container fluid style={{ height: "700px" }} className="homecontainer">
+    <Container fluid style={{ height: "100vh" }} className="homecontainer">
       <Row
         style={{
           alignItems: "center",
