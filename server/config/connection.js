@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1/marvelous', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1/marvelous_db', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

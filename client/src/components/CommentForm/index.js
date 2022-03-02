@@ -15,6 +15,7 @@ const CommentForm = (props) => {
 		}
 	};
 
+<<<<<<< HEAD
 	// Comment submit form
 	const handleFormSubmit = async (event) => {
 		event.preventDefault();
@@ -29,6 +30,21 @@ const CommentForm = (props) => {
 			console.error(e);
 		}
 	};
+=======
+  // Comment submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await addComment({
+        variables: { index, commentText },
+      });
+      // clear form value on Submit
+      setText('');
+    } catch (e) {
+      console.error(e);
+    }
+  };
+>>>>>>> ad315f1eebde7cab25b85901c6e43e39cba55b86
 
 	return (
 		<div>
