@@ -1,6 +1,6 @@
 # Marvelous
 
-MARVELOUS is a web application for the use of Marvel movie and comic book fans, and just about anyone who wants to learn more about Marvel characters. The app features a search function that let's you explore various versions of a character. For example, type "spider-man" and ge 13 results to view from! We also built a forum specifically for users to be able to comment and share their interest in the Marvel Universe. 
+MARVELOUS is a web application for the use of Marvel movie and comic book fans, and just about anyone who wants to learn more about Marvel characters. The app features a search function that let's you explore various versions of a character. For example, type "spider-man" and receive 13 results to view from the [Marvel Comics API](https://developer.marvel.com/)! We also built a forum specifically for users to be able to comment and share their interest in the Marvel Universe. 
 
 View website: [https://marvelous-mern.herokuapp.com/](https://marvelous-mern.herokuapp.com/)
 
@@ -8,7 +8,7 @@ View website: [https://marvelous-mern.herokuapp.com/](https://marvelous-mern.her
   - [User Story](#user-story)
   - [Technologies](#technologies)
   - [Features](#features)
-  - [Authors](#authors)
+  - [Developers](#developers)
 
 ## User Story
 AS A USER I want to be able to use an app to search for my favorite Marvel superheroes and villains. 
@@ -41,7 +41,7 @@ WHEN I AM DONE I would like to be able to log out of my account.
 ### Login page
 ![Spotlight page](client/src/assets/images/marvelous-login.png)
 
-### Developer roles and tasks
+### Developers
 
 - [Kevin Aboy](https://github.com/kevinaboy)
   - Designed webpage mockups and selected artwork
@@ -70,4 +70,4 @@ WHEN I AM DONE I would like to be able to log out of my account.
   - Set up and tweaked various React components
   - Helped with styling and style tweaks
 
-
+For educational purposes only.<br />Data provided by Marvel. ©2022 Marvel
