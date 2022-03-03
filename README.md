@@ -30,25 +30,25 @@ WHEN I AM DONE I would like to be able to log out of my account.
 ## Features
 
 ### Home page
-![Home Page](https://marvelous-project-3.s3.us-east-2.amazonaws.com/marvelous-homepage.png)
+![Home Page](client/src/assets/images/marvelous-homepage.png)
 
 ### Search page
-![Search page](https://marvelous-project-3.s3.us-east-2.amazonaws.com/marvelous-search.png)
+![Search page](client/src/assets/images/marvelous-search.png)
 
 ### Spotlight Hero page with comments section
-![Spotlight page](https://marvelous-project-3.s3.us-east-2.amazonaws.com/marvelous-spotlight.png)
+![Spotlight page](client/src/assets/images/marvelous-spotlight.png)
 
 ### Login page
-![Spotlight page](https://marvelous-project-3.s3.us-east-2.amazonaws.com/marvelous-login.png)
+![Spotlight page](client/src/assets/images/marvelous-login.png)
 
 ### Developer roles and tasks
 
 - [Kevin Aboy](https://github.com/kevinaboy)
-  - Managed meetings
   - Designed webpage mockups and selected artwork
   - Enhanced search functionality
   - Styled Home, Search, and Search Result pages
-  - Amazon Web Services Root User responsible for  creating and storing images in S3
+  - Responsible for creating and storing images in AWS S3
+  - Managed meetings
   - Updated ReadMe
 - [Bryan Acosta](https://github.com/TheBryan-Acosta)
   - Styled Home, Login, Sign Up, Spotlight, Search page results/cards, and Footer
