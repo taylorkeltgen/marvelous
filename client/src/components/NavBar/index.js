@@ -14,7 +14,7 @@ function NavBar() {
   };
 
   return (
-    <Navbar className="custom" variant="dark" expand="sm">
+    <Navbar className="custom" variant="dark" expand="lg">
       <Navbar.Brand>
         {' '}
         <Link data-testid="home" to="/" className="nav-link">
