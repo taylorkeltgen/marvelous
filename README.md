@@ -2,8 +2,7 @@
 
 MARVELOUS is a web application for the use of Marvel movie and comic book fans, and just about anyone who wants to learn more about Marvel characters. The app features a search function that let's you explore various versions of a character. For example, type "spider-man" and ge 13 results to view from! We also built a forum specifically for users to be able to comment and share their interest in the Marvel Universe. 
 
-[View our marvelous website](https://marvelous-mern.herokuapp.com/search)!
-
+View website: [https://marvelous-mern.herokuapp.com/](https://marvelous-mern.herokuapp.com/)
 
 ## Table of Contents
   - [User Story](#user-story)
