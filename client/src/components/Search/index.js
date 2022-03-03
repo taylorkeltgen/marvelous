@@ -5,10 +5,11 @@ import HeroList from "../HeroList";
 import axios from "axios";
 import "./index.css";
 
-const Search = () => {
+const Search = (props) => {
 	const [character, setCharacter] = useState([]);
 	const [search, setSearch] = useState();
-	const clicked = () => {
+	const clicked = (event) => {
+    event.preventDefault()
 		// declaring variables needed for an API call as per Marvel documentation
 		const md5 = require("md5");
 		const privateKey = "c9e3d0742ac2221695971bb908881f232f6f4a61";
@@ -35,7 +36,6 @@ const Search = () => {
 
 	return (
 		<Container fluid>
-			{/* <h1>Superhero Search</h1> */}
 			<Form className="d-flex justify-content-center my-5">
 				<input
 					className="form-control-lg text-center px-5 mx-2"
@@ -45,7 +45,7 @@ const Search = () => {
 					value={search}
 					onChange={handleInputChange}
 				></input>
-				<Button type="button" variant="danger" onClick={clicked}>
+				<Button type="submit" variant="danger" onClick={clicked}>
 					Search
 				</Button>
 			</Form>
