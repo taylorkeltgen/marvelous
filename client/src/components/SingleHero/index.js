@@ -11,7 +11,7 @@ const SingleHero = (props) => {
 		<Container fluid>
 			<Row className="justify-content-md-center">
 				<Col md="auto">
-					<Card style={{ width: "25rem" }}>
+					<Card style={{ width: "25rem" }} className="my-5">
 						<Card.Img variant="top" src={image} alt={hero.name} />
 						<Card.Body>
 							<Card.Title>{hero.name}</Card.Title>
